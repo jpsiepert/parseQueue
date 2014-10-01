@@ -1,0 +1,46 @@
+body {
+	background-color: #90BDB9;
+}
+.pendingQ {
+	/*border: 1px solid yellow;*/
+	width: 500px;
+	min-height: 100px;
+	display: inline-block;
+	
+}
+
+.assistQ{
+	/*border: 1px solid green;*/
+	width: 500px;
+	min-height: 100px;
+	display: inline-block;
+}
+
+.question-form {
+	/*border: 1px solid #FF006F;*/
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+p{
+	text-align: center;
+}
+
+.student-font {
+	font-family: cursive;
+	font-size: 20px;
+	color: #FF006F;
+}
+
+.pending-font {
+	color: #F32F2F;
+}
+
+.assist-font {
+	color: #DFF613;
+}
+
+.buttons {
+	color: #13F72A;
+	background-color: #2A13F7;
+}

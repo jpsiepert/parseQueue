@@ -1,10 +1,35 @@
-<DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html ng-app = "parseQueue">
 <head>
 	<title>ParseQ</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<body>
+<body ng-controller = "mainCtrl">
+<!-- {{test}} -->
+
+<div class="question-form"><form ng-submit="postData()">
+	<input class="form-control" type="text" placeholder="Ask Question" ng-model="studentQuestion">
+</form>
+</div>
+
+<div class="pendingQ">
+	<p class="student-font">Pending Students</p>
+	<p class="pending-font"ng-repeat="question in questions | filter: question.status='red'">{{question.text}} {{question.createdAt | date: "short"}}
+	<button class="btn buttons" ng-click="changeStatus(question)">Assist Student</button>
+	</p>
+</div>
+
+<div class="assistQ">
+	<p class="student-font">Students being Assissted</p>
+	<p class="assist-font" ng-repeat="question in questions  | filter: question.status='yellow'">{{question.text}} {{question.updatedAt | date: "short"}}
+	<button class=" btn buttons" ng-click="deleteQuestion(question)">Finished</button>
+</div>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/MainCtrl.js"></script>
+<script src="js/services/parseService.js"></script>
+<script src="js/defaultheaders.js"></script>
 </body>
 </html>
